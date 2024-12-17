@@ -1,42 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Website</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="Solar energy company.">
+        <meta name="keywords" content="solar, energy, renewable, solarni, paneli, bih">
+        <title>Sky Energy v0.1</title>
+        
+        <!-- <link rel="stylesheet" href="styles.css"> -->
+        <link rel="stylesheet" href="style.css">
+        <link href="lightbox/css/lightbox.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    </head>
+    
 <body>
     <header>
-        <h1>Welcome to My Store</h1>
+        <h1>Welcome to Sky Energy</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
+                <li><a href="webshop.html">Web shop</a></li>
                 <li><a href="contact.html">Contact</a></li>
+                <li><a href="webshop/cart.html">Cart</a></li>
             </ul>
         </nav>
     </header>
 
     <section id="gallery">
-        <h2>Gallery</h2>
+        <h2>Our Work</h2>
         <div class="image-container">
-            <!-- Add images of your work here -->
-            <img src="images/example1.jpg" alt="Example Work 1">
-            <img src="images/example2.jpg" alt="Example Work 2">
+            <a href="images/project1.jpg" data-lightbox="gallery" data-title="Solarna elektrana 50 kW Kakanj">
+                <img src="images/project1-thumb.jpg" alt="Project 1">
+            </a>
+            <a href="images/project2.jpg" data-lightbox="gallery" data-title="Solarna elektrana 23 kW Kakanj">
+                <img src="images/project2-thumb.jpg" alt="Project 2">
+            </a>
         </div>
     </section>
+    
 
     <section id="products">
         <h2>Our Products</h2>
         <ul>
-            <li>Product 1 - $X</li>
-            <li>Product 2 - $Y</li>
+            <li>
+                <h3>Product 1</h3>
+                <p>Description of product 1</p>
+                <p>Price: $X</p>
+                <button>Add to Cart</button>
+            </li>
+            <li>
+                <h3>Product 2</h3>
+                <p>Description of product 2</p>
+                <p>Price: $Y</p>
+                <button>Add to Cart</button>
+            </li>
             <!-- Add more products as needed -->
         </ul>
     </section>
+    
+    <!-- Cart Sidebar bluring rest of the page -->
+    <div id="page-overlay"></div>
+
+     <!-- Cart Sidebar -->
+     <div id="cart-sidebar">
+        <button id="close-cart-btn">&times;</button>
+        <h2>Your Cart</h2>
+        <ul id="cart-sidebar-list">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <button id="clear-cart-btn">Clear Cart</button>
+        <button id="checkout-btn" onclick="window.location.href='webshop/cart.html'">Checkout</button>
+    </div>
+
+    <!-- Cart Icon (always visible) -->
+    <div id="cart-icon">
+        <img src="webshop/cart-icon.png" alt="Cart Icon">
+    </div>
 
     <footer>
-        <p>&copy; 2024 My Website</p>
+        <p>&copy; 2025 Sky Energy</p>
     </footer>
+
+    <script src="lightbox/js/lightbox-plus-jquery.js"></script>
+
+    <script src="webshop/script.js"></script>
+
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
 </body>
 </html>

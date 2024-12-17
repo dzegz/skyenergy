@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <header>
+        <h1>Web Shop</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="webshop.html">Web shop</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="webshop/cart.html">Cart</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="products">
+        <h2>Our Products</h2>
+        <ul>
+            <li>
+                <h3>Product 1</h3>
+                <p>Description of product 1</p>
+                <p>Price: $500</p>
+                <button class="add-to-cart" data-product="product1" data-name="Product 1" data-price="500">Add to Cart</button>
+            </li>
+            </li>
+            <li>
+                <h3>Product 2</h3>
+                <p>Description of product 2</p>
+                <p>Price: $1000</p>
+                <button class="add-to-cart" data-product="product2" data-name="Product 2" data-price="1000">Add to Cart</button>
+            </li>
+            <!-- Add more products as needed -->
+        </ul>
+    </section>
+
+    <!-- Cart Sidebar bluring rest of the page -->
+    <div id="page-overlay"></div>
+
+     <!-- Cart Sidebar -->
+     <div id="cart-sidebar">
+        <button id="close-cart-btn">&times;</button>
+        <h2>Your Cart</h2>
+        <ul id="cart-sidebar-list">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <button id="clear-cart-btn">Clear Cart</button>
+        <button id="checkout-btn" onclick="window.location.href='webshop/cart.html'">Checkout</button>
+    </div>
+
+    <!-- Cart Icon (always visible) -->
+    <div id="cart-icon">
+        <img src="webshop/cart-icon.png" alt="Cart Icon">
+    </div>
+
+
+    <footer>
+        <p>&copy; 2025 Sky Energy</p>
+    </footer>
+
+    <script src="webshop/script.js"></script>
+
+    <style>
+      body {
+        font-family: 'Roboto', sans-serif;
+      }
+    </style>
+
+</body>
+</html>
