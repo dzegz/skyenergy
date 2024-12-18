@@ -5,21 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="../style.css">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 </head>
 <body>
+
     <header>
-        <h1>Cart</h1>
+        <div class="logo-and-message">
+            <img src="../images/icon96.png" alt="Company logo" class="company-logo">
+            <h1>SKY ENERGY</h1>
+        </div>
         <nav>
             <ul>
                 <li><a href="../index.html">Home</a></li>
-                <li><a href="../webshop.html">Web Shop</a></li>
-                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../webshop.html">Web shop</a></li>
                 <li><a href="cart.html">Cart</a></li>
+                <li><a href="../contact.html">Contact</a></li>
+                <li><a href="../about.html">About Us</a></li>
             </ul>
         </nav>
     </header>
 
-    <main>
+    <section id="cartlist">
         <h1>Your Shopping Cart</h1>
         <section id="cart-items">
             <ul id="cart-list"></ul>
@@ -27,7 +35,7 @@
 
         <button id="checkout-btn">Checkout</button>
         <button id="clear-cart-btn">Clear Cart</button>
-    </main>
+    </section>
 
     <footer>
         <p>&copy; 2025 Sky Energy</p>
@@ -38,7 +46,8 @@
 
     <style>
       body {
-        font-family: 'Roboto', sans-serif;
+        /*font-family: 'Roboto', sans-serif;*/
+        font-family: 'Poppins', sans-serif;
       }
     </style>
 </body>

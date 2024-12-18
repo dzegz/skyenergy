@@ -1,0 +1,150 @@
+/* CSS for project pages */
+
+#maintitle {
+    position: relative;
+    width: 100%;
+    height: 150px; /* Adjust height as needed */
+}
+
+.maintitle-image {
+    position: relative;
+}
+
+.maintitle-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.maintitle-image img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover; /* Ensures the image covers the section area */
+}
+
+.maintitle-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 2; /* text above opacity */
+    font-family: 'Poppins', sans-serif;
+}
+
+.maintitle-text h1 {
+    font-size: 2rem;
+    margin: 0;
+}
+
+.maintitle-text p {
+    font-size: 1rem;
+    margin: 10px 0;
+}
+
+/* Gallery stuff */
+
+/* Gallery images */
+#gallery .image-container a {
+    position: relative; /* Required for positioning the overlay */
+}
+
+/* Dark overlay by default */
+#gallery .image-container a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container */
+    transition: opacity 0.5s ease; /* Add a transition for the image opacity */
+    opacity: 0.8; /* Darken the image by default */
+}
+
+/* Dark overlay on top of the image */
+#gallery .image-container a::before {
+    content: ''; /* Empty content for the pseudo-element */
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Darken the image with 70% opacity */
+    transition: opacity 0.5s ease; /* Smooth transition for the overlay */
+    opacity: 1; /* Dark overlay by default */
+}
+
+/* Remove the dark overlay and reset the image opacity on hover */
+#gallery .image-container a:hover::before {
+    opacity: 0; /* Hide the overlay on hover */
+}
+
+#gallery .image-container a:hover img {
+    opacity: 1; /* Keep the image at full opacity on hover */
+}
+
+
+/* project image */
+
+.project-image-detailed {
+    position: relative;
+    width: 600px; /* Set the image width to 500px */
+    height: 800px; /* Set the image height to 500px */
+}
+
+.project-image-detailed img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the container area */
+}
+
+/* project main info */
+
+#info-tab-container {
+    display: flex;
+    flex-wrap: nowrap; /* Prevent wrapping */
+    gap: 20px; /* Adds space between the sections */
+    justify-content: space-between; /* Ensures space is distributed evenly */
+    margin-bottom: 80px;
+}
+
+#info-tab {
+    width: 30%; /* Adjust width to fit 3 items on the same line */
+    box-sizing: border-box; /* Ensure padding/margins don't break the layout */
+}
+
+#info-tab h3 {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+#info-tab p {
+    margin-top: 0;
+    margin-bottom: 5px;
+}
+
+/* for gallery line */
+
+#gallery {
+    text-align: center;  /* Center the text inside the gallery section */
+}
+
+#gallery h2 {
+    position: relative;
+    display: inline-block;
+    padding-top: 20px; /* Adds space between the line and the title */
+}
+
+#gallery h2::before {
+    content: "";
+    position: absolute;
+    top: -10px; /* Position the line above the h2 */
+    left: 50%;
+    width: 50%; /* Adjust this value to control the length of the line */
+    height: 4px; /* Thickness of the line */
+    background-color: orange; /* Line color */
+    transform: translateX(-50%); /* Center the line horizontally */
+}
