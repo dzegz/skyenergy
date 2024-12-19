@@ -1,0 +1,525 @@
+/* Basic styles for smaller screens (mobile-first approach) */
+html, body {
+    height: 100%;  /* Ensure the body and html take up the full height */
+    margin: 0;     /* Remove default margin */
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #333333de; /* #333333de */
+    color: white;
+    padding: 8px 16px;
+    display: flex; /* Use flexbox for header layout */
+    align-items: center; /* Vertically align the items */
+    justify-content: space-between; /* Space out logo/message and nav */
+    font-family: 'Poppins', sans-serif;
+}
+
+.logo-and-message {
+    display: flex; /* Align logo and text in a row */
+    align-items: center; /* Vertically center logo and text */
+    width: 100%;
+    letter-spacing: 0.4rem;
+}
+
+.logo-and-message img {
+    height: 96px; /* Set a consistent height for the logo */
+    margin-right: 10px; /* Add space between logo and text */
+}
+
+.logo-and-message h1 {
+    font-size: 2rem;
+    margin: 0; /* Remove default margin for better alignment */
+}
+
+header nav {
+    display: flex; /* Use flexbox to align nav items */
+    justify-content: center; /* Center the nav items */
+    width: 100%; /* Make the nav take up the full width */
+}
+
+/* Navigation bar styles */
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 0px;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 15px 20px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #ff7f501f;
+    border-radius: 0px;
+}
+
+
+/* other */
+
+h2 {
+    text-align: center;  /* Centers the text horizontally */
+    margin-top: 40px;
+    margin-bottom: 40px;
+    /*margin: 0 auto;      /* Optional: Ensures the margin is consistent */
+    font-size: 24px;     /* Optional: Adjust font size */
+}
+
+
+
+/* Larger screens */
+@media (min-width: 768px) {
+    #gallery .image-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+    }
+
+    #products {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    #products li {
+        width: 30%;
+    }
+}
+
+/* Extra large screens */
+@media (min-width: 1200px) {
+    header {
+        text-align: left;
+        padding: 5px 50px;
+    }
+
+    #gallery .image-container {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    #products li {
+        width: 23%;
+    }
+}
+
+/* PRODUCTS */
+#products {
+    justify-content: center;
+    display: grid;
+}
+
+#products ul {
+    display: flex;             /* Display list items inline */
+    flex-wrap: wrap;            /* Allows items to wrap to new lines if needed */
+    gap: 10px;                  /* Adds spacing between products */
+    justify-content: center;    /* Centers the items horizontally */
+    padding: 0;                 /* Removes default padding */
+    list-style: none;           /* Removes list bullets */
+    margin-top: 0px;
+}
+
+#products li {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#products li:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+#products h3 {
+    margin: 0px 0px;
+    font-size: 18px;
+}
+
+#products p {
+    font-size: 16px;
+    color: #555;
+}
+
+#products li img.product-image {
+    width: 130px;            /* Makes the image fill the container */
+    height: 130px;           /* Maintains the aspect ratio */
+    border-radius: 8px;     /* Optional: rounds the corners of the image */
+    object-fit: cover;      /* Ensures the image covers the area without distortion */
+    margin-bottom: 15px;    /* Adds space between the image and text */
+}
+
+/* --------------------------------------------------------- */
+
+button {
+    background-color: orange;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: rgb(255, 145, 0);
+}
+
+/* Image gallery styling */
+#gallery .image-container {
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+#gallery .image-container a {
+    width: 200px;
+    height: 200px;
+    overflow: hidden;
+    display: block;
+    position: relative;
+}
+
+#gallery .image-container a img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+#gallery .image-container a:hover img {
+    transform: scale(1.1);
+}
+
+/* FOOTER */
+
+footer {
+    text-align: center;  /* Centers the text horizontally */
+    padding: 0px;       /* Adds space around the content */
+    margin-top: 0;
+}
+
+/* Cart Sidebar */
+#cart-sidebar {
+    position: fixed;
+    top: 0;
+    right: -400px; /* Initially hidden */
+    width: 300px;
+    height: 100%;
+    background-color: #f4f4f4;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.3);
+    padding: 20px;
+    transition: right 0.3s ease;
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+#cart-sidebar h2 {
+    margin-top: 0;
+}
+
+#cart-sidebar ul {
+    list-style-type: none;
+    padding: 0;
+    overflow-y: auto;
+    flex-grow: 1;
+    max-height: 80%;
+    margin-bottom: 0px;
+}
+
+#cart-sidebar ul li {
+    margin: 10px 0;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 10px;
+}
+
+#cart-sidebar #close-cart-btn {
+    background-color: orange; /* Orange background */
+    color: white; /* White text/icon color */
+    border: none;
+    font-size: 20px;
+    width: 40px; /* Circle size */
+    height: 40px; /* Circle size */
+    border-radius: 50%; /* Makes it circular */
+    position: absolute;
+    top: 10px; /* Distance from the top */
+    left: -20px; /* Aligns it to the left border */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Optional: subtle shadow */
+    transition: background-color 0.3s ease;
+}
+
+#cart-sidebar #close-cart-btn:hover {
+    background-color: #e69500; /* Slightly darker orange on hover */
+}
+
+/* Cart Icon */
+#cart-icon {
+    position: fixed;
+    top: 30px;
+    right: 40px;
+    /*background-color: #fff;
+    border-radius: 50%;*/
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    width: 45px;
+    height: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1001;
+    cursor: pointer;
+}
+
+#cart-icon img {
+    width: 35px;
+    height: 35px;
+}
+
+/* Buttons at the bottom */
+#cart-sidebar button {
+    width: 100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+#cart-sidebar button:hover {
+    background-color: #0056b3;
+}
+
+#page-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3); /* Semi-transparent dark overlay */
+    z-index: 999; /* Below cart sidebar but above other content */
+    visibility: hidden; /* Initially hidden */
+    opacity: 0; /* Initially transparent */
+    transition: visibility 0s, opacity 0.3s ease; /* Smooth fade-in effect */
+    backdrop-filter: blur(5px); /* Blurs the background */
+}
+
+/* Show overlay when active */
+#page-overlay.active {
+    visibility: visible;
+    opacity: 1;
+}
+
+/* contacting form */
+#form-message {
+    display: none; /* Hidden by default */
+    color: green; /* Default color for success messages */
+    margin-top: 10px; /* Spacing from the submit button */
+    text-align: center; /* Center the text horizontally */
+    font-weight: bold; /* Optional: make the message bold */
+  }
+
+  /* main image on homepage */
+  /* Main Home Section */
+#mainhome {
+    position: relative;
+    width: 100%;
+    height: 100%; /* Adjust height as needed /850px */
+}
+
+.mainhome-image {
+    position: relative;
+}
+
+.mainhome-image::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 850px;
+    background: rgba(0, 0, 0, 0.6); /* Dark overlay */
+    z-index: 1;
+}
+
+.mainhome-image img {
+    width: 100%;
+    height: 850px;
+    object-fit: cover; /* Ensures the image covers the section area */
+}
+
+.mainhome-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    z-index: 2; /* text above opacity */
+    font-family: 'Poppins', sans-serif;
+}
+
+.mainhome-text h1 {
+    font-size: 3rem;
+    margin: 0;
+}
+
+.mainhome-text p {
+    font-size: 1.5rem;
+    margin: 10px 0;
+}
+
+/* cart page list */
+
+#cartlist {
+    text-align: center;
+}
+
+#cart-list {
+    text-align: center;
+    list-style-type: none; /* Removes bullet points */
+    padding: 0; /* Removes any default padding */
+}
+
+/* logo and title link to homepage */
+
+.logo-link {
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the original color */
+    display: inline-flex; /* Ensures the link wraps both elements properly */
+    align-items: center; /* Centers items if needed */
+}
+
+/* ------------------------------------------------- */
+/* end of the page */
+/* ------------------------------------------------- */
+
+#info-plane {
+    display: flex;
+    width: 60%;
+    margin: 200px auto 0; /* 20px gap from the upper section */
+    padding-left: 30px;
+    background-color: #f9f9f9; /* Optional: background color */
+}
+
+.info-left {
+    display: flex;
+    flex-direction: column; /* Arrange logo and text vertically */
+    width: 30%; /* 30% of the container */
+    padding-right: 0px;
+    padding-bottom: 50px;
+}
+
+.info-left img {
+    max-width: 96px;
+    height: 96px;
+}
+
+.info-left h2 {
+    margin: 0 0; /* Remove margin to keep it in line with the logo */
+    font-size: 1.1em; /* Adjust font size as needed */
+    text-align: left;
+    margin-bottom: 2rem;
+}
+
+.info-left p {
+    margin: 0 0; /* Reduced spacing for paragraph text */
+    font-size: 0.8rem;
+}
+
+.info-left span {
+    display: block; /* Each span takes its own line */
+    margin-bottom: 10px; /* Space between spans */
+    margin-top: 10px; /* Space between spans */
+}
+
+.info-right {
+    width: 70%; /* 70% of the container */
+    background-color: rgba(255, 166, 0, 0.164); /* ff7f5081 Set the right part background to orange */
+    display:flex;
+}
+
+.info-right-left {
+    width: 50%; 
+}
+
+.info-right-right {
+    width: 50%; 
+}
+
+.info-right-left h2 {
+    text-align: left; /* Center the "Quick Links" heading */
+    margin-top: 4.5rem; /* Adjust margin for heading */
+    padding-left: 30%; /* Indent the links by 20% */
+}
+
+.info-right-left ul {
+    list-style-type: none;
+    padding-top: 0;
+    margin: 0;
+    padding-left: 30%; /* Indent the links by 20% */
+}
+
+.info-right li {
+    margin: 0px 0; /* Reduced spacing between list items */
+}
+
+.info-right a {
+    text-decoration: none;
+    color: #551b06; /* Change to your preferred color */
+}
+
+.info-right a:hover {
+    text-decoration: solid;
+    color: black;
+}
+
+
+.info-right-right h2 {
+    text-align: left; /* Center the "Quick Links" heading */
+    margin-top: 4.5rem; /* Adjust margin for heading */
+    padding-left: 10%;
+}
+
+.info-right-right ul {
+    list-style-type: none;
+    padding-top: 0;
+    margin: 0;
+    color: #551b06;
+    padding-left: 10%; /* Indent the links by 20% */
+}
+
+/* ------------------------------------------------- */
+

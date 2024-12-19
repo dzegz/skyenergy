@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="contact-style.css">
+    <link rel="stylesheet" href="project-style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+</head>
+<body>
+  <header>
+    <div class="logo-and-message">
+      <a href="index.html" class="logo-link">
+        <img src="images/icon96.png" alt="Company logo" class="company-logo">
+        <h1>SKY ENERGY</h1>
+    </a>
+    </div>
+    <nav>
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="webshop.html">Web shop</a></li>
+            <li><a href="webshop/cart.html">Cart</a></li>
+            <li><a href="contact.html">Contact</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+</header>
+
+  <section id="maintitle">
+    <div class="maintitle-image">
+        <img src="images/project3.jpg" alt="Main Title Image">
+        <div class="maintitle-text">
+            <h1>Contact</h1>
+        </div>
+    </div>
+  </section>
+
+
+    <div class="contact-line">
+    <iframe src="https://maps.google.com/maps?q=44.18502842967331, 17.966357486456772&z=12&output=embed" width="450" height="550" frameborder="0" style="border:0"></iframe>
+    <section id="base-info">
+      <h2>Address</h2>
+      <p>Bistua Nuova 32D, Zenica</p>
+  
+      <h2>Phones</h2>
+      <p>+387 62 881 543</p>
+      <p>+387 62 668 423</p>
+      
+      <h2>E-mail</h2>
+      <p>sky.energy@hotmail.com</p>
+    </section>
+
+    <section id="contact-form">
+        <h2>Get in Touch</h2>
+        <form id="contact-form-element" action="/submit-form" method="POST">
+        <label>
+          Your email:
+          <input type="email" id="email" name="email">
+        </label>
+
+        <label>
+          Your message:
+          <textarea id="message" name="message"></textarea>
+        </label>
+
+        <!-- your other form fields go here-->
+        <button type="submit">Send</button>
+        <div id="form-message"></div>
+        <!-- <input type="submit" value="Send"> -->
+      </form>
+    </section>
+  </div>
+
+    <!-- Cart Sidebar bluring rest of the page -->
+    <div id="page-overlay"></div>
+
+    <!-- Cart Sidebar -->
+    <div id="cart-sidebar">
+        <button id="close-cart-btn">&times;</button>
+        <h2>Your Cart</h2>
+        <ul id="cart-sidebar-list">
+            <!-- Cart items will be dynamically added here -->
+        </ul>
+        <button id="clear-cart-btn">Clear Cart</button>
+        <button id="checkout-btn" onclick="window.location.href='webshop/cart.html'">Checkout</button>
+    </div>
+
+    <!-- Cart Icon (always visible) -->
+    <div id="cart-icon">
+        <img src="webshop/cart-icon.png" alt="Cart Icon">
+    </div>
+
+    <div id="info-plane">
+      <div class="info-left">
+          <img src="images/icon96.png" alt="Company Logo">
+          <h2>Sky Energy d.o.o.</h2>
+          <span><p>Bistua Nuova 32D, Zenica<br>
+                <p>Bosnia and Herzegovina</p>
+              </span>
+
+          <span>
+              <p>+387 62 881 543</p>
+              <p>+387 62 668 423</p>
+          </span>
+          <span>
+              <p>sky.energy@hotmail.com</p>
+          </span>
+      </div>
+      <div class="info-right">
+          <div class="info-right-left">
+              <h2>Quick Links</h2>
+              <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="webshop.html">Web Shop</a></li>
+                <li><a href="webshop/cart.html">Cart</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+          </div>
+          <div class="info-right-right">
+              <h2>Business hours</h2>
+              <ul>
+                  <li>Mon - Fri  :  08:00 - 16:00</li>
+              </ul>
+          </div>
+      </div>
+  </div>
+
+    <footer>
+        <p>&copy; 2025 Sky Energy</p>
+    </footer>
+
+    <script src="webshop/script.js"></script>
+    <script src="script.js"></script>
+
+    <style>
+      body {
+        /*font-family: 'Roboto', sans-serif;*/
+        font-family: 'Poppins', sans-serif;
+      }
+    </style>
+</body>
+</html>
