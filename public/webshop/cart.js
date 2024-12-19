@@ -11,7 +11,7 @@ function renderCart() {
     } else {
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.innerHTML = `${item.name} - $${item.price} x ${item.quantity}`;
+            li.innerHTML = `${item.name} - ${item.price} BAM x ${item.quantity}`;
             cartList.appendChild(li);
         });
     }

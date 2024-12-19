@@ -70,7 +70,7 @@ function updateCartSidebar() {
     } else {
         cart.forEach(item => {
             const li = document.createElement('li');
-            li.textContent = `${item.name} - $${item.price} x ${item.quantity}`;
+            li.textContent = `${item.name} - ${item.price} BAM x ${item.quantity}`;
             cartList.appendChild(li);
         });
     }

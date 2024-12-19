@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shopping Cart</title>
     <link rel="stylesheet" href="../style.css">
+    <link rel="stylesheet" href="../project-style.css">
+    <link rel="stylesheet" href="../index-style.css">
     <!-- fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
 
@@ -13,8 +15,10 @@
 
     <header>
         <div class="logo-and-message">
-            <img src="../images/icon96.png" alt="Company logo" class="company-logo">
-            <h1>SKY ENERGY</h1>
+            <a href="../index.html" class="logo-link">
+                <img src="../images/icon96.png" alt="Company logo" class="company-logo">
+                <h1>SKY ENERGY</h1>
+            </a>
         </div>
         <nav>
             <ul>
@@ -27,6 +31,15 @@
         </nav>
     </header>
 
+    <section id="maintitle">
+        <div class="maintitle-image">
+            <img src="../images/project3.jpg" alt="Main Title Image">
+            <div class="maintitle-text">
+                <h1>Cart</h1>
+            </div>
+        </div>
+    </section>
+
     <section id="cartlist">
         <h1>Your Shopping Cart</h1>
         <section id="cart-items">
@@ -36,6 +49,42 @@
         <button id="checkout-btn">Checkout</button>
         <button id="clear-cart-btn">Clear Cart</button>
     </section>
+
+    <div id="info-plane">
+        <div class="info-left">
+            <img src="../images/icon96.png" alt="Company Logo">
+            <h2>Sky Energy d.o.o.</h2>
+            <span><p>Bistua Nuova 32D, Zenica<br>
+                  <p>Bosnia and Herzegovina</p>
+                </span>
+
+            <span>
+                <p>+387 62 881 543</p>
+                <p>+387 62 668 423</p>
+            </span>
+            <span>
+                <p>sky.energy@hotmail.com</p>
+            </span>
+        </div>
+        <div class="info-right">
+            <div class="info-right-left">
+                <h2>Quick Links</h2>
+                <ul>
+                    <li><a href="../index.html">Home</a></li>
+                    <li><a href="../webshop.html">Web Shop</a></li>
+                    <li><a href="cart.html">Cart</a></li>
+                    <li><a href="../contact.html">Contact</a></li>
+                    <li><a href="../about.html">About Us</a></li>
+                </ul>
+            </div>
+            <div class="info-right-right">
+                <h2>Business hours</h2>
+                <ul>
+                    <li>Mon - Fri  :  08:00 - 16:00</li>
+                </ul>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <p>&copy; 2025 Sky Energy</p>

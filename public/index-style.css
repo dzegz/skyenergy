@@ -76,14 +76,15 @@
 .project-title::after {
     content: '';
     position: absolute;
-    left: 100%;
-    top: 50%;
-    width: 100vw;
-    /*width: calc(130%); *//* 60% width of the section minus padding */
-    height: 3px;
-    background-color: orange; /* Orange line color */
+    left: 0; /* Start from the left of the viewport */
+    top: 50%; /* Center vertically relative to the parent */
+    width: 1200px; /* Extend the line across the full viewport width */
+    height: 3px; /* Line thickness */
+    background-color: orange; /* Line color */
     transform: translateY(-50%); /* Center the line vertically */
+    z-index: -1; /* Place the line behind other content */
 }
+
 
 
 /* everythin the same for the right image */
@@ -128,9 +129,10 @@
 .project-title-right::after {
     content: '';
     position: absolute;
+    left: -150%;
     right: 100%;
     top: 50%;
-    width: 100vw;
+    width: 750px;
     /*width: calc(130%); *//* 60% width of the section minus padding */
     height: 3px;
     background-color: orange; /* Orange line color */
@@ -154,3 +156,4 @@
     font-size: 1rem;
     line-height: 1.5;
 }
+
