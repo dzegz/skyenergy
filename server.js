@@ -3,7 +3,15 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 
 const app = express();
-const PORT = 3000;
+const PORT = process.env.PORT || 3000;
+// mysql 
+
+const mysql = require('mysql2');
+const session = require("express-session");
+require("dotenv").config();
+const adminRoutes = require("./routes/admin");
+const db = require('./db');
+//--------------------------------------------------
 
 // Middleware to parse form data
 app.use(bodyParser.json());
@@ -48,6 +56,25 @@ app.post('/submit-form', (req, res) => {
             
         });
     }
+});
+
+//mysql
+// Route for testing the database connection
+
+app.use(
+    session({
+      secret: process.env.SESSION_SECRET,
+      resave: false,
+      saveUninitialized: true,
+    })
+  );
+  
+  // Routes
+  app.use("/admin", adminRoutes); //conecting to routes/admin.js
+
+  const path = require('path');
+  app.get('/admin', (req, res) => {
+    res.sendFile(path.join(__dirname, 'views/login.html'));  // Serve the admin.html file from 'routes' folder
 });
 
 // Start the server
